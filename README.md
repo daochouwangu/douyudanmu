@@ -5,7 +5,7 @@
 暂不支持全屏
 暂不支持贵族弹幕
 
-
+```
 var targetNode = document.getElementById('js-player-barrage');
 var config = { attributes: false, childList: true, subtree: true };
 var callback = function(mutationsList) {
@@ -54,3 +54,4 @@ function send(danmu) {
 	setTimeout(function(){dom.style.transform = `translateX(-${clientWidth}px)`;},0);
 	setTimeout(function(){dom.remove();},7000);
 }
+```

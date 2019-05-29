@@ -17,7 +17,6 @@ var callback = function(mutationsList) {
 };
 var observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
-
 var wrapper = document.createElement('div');
 document.body.append(wrapper);
 var startTime = 0;
@@ -52,7 +51,6 @@ function send(danmu) {
 	dom.style.right='0';
 	wrapper.append(dom);
 	var clientWidth = document.body.clientWidth;
-	setTimeout(function(){dom.style.transform = `translateX(-${clientWidth}px)`},0);
-	setTimeout(function(){dom.remove()},7000);
+	setTimeout(function(){dom.style.transform = `translateX(-${clientWidth}px)`;},0);
+	setTimeout(function(){dom.remove();},7000);
 }
-

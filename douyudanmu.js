@@ -29,6 +29,10 @@ function send(danmu) {
 	dom.style.transform = 'translateX(200px)'
 	dom.style.fontSize = '20px'
 	dom.style.fontWeight = '800'
+	if (!danmu.getAttribute('class').includes('color')){
+		dom.style.color = '#fff'
+		dom.style.textShadow = '#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0'
+	}
 	var top = BEGIN_TOP 
 	if (startTime === 0 ) {
 		startTime = now 

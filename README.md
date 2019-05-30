@@ -1,4 +1,7 @@
 # douyudanmu
+斗鱼只是做了弹幕隐藏，只要css改回来就好了
+document.querySelector("#__h5player").children[3].style.visibility = 'visible'
+
 现已经支持[huya](https://github.com/daochouwangu/douyudanmu/blob/master/huyadanmu.js),[b站直播](https://github.com/daochouwangu/douyudanmu/blob/master/bilibilidanmu.js)
 斗鱼弹幕助手，临时用
 暂不支持全屏

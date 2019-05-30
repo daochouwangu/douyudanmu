@@ -54,4 +54,3 @@ function send(danmu) {
 	//垃圾回收
 	setTimeout(function(){dom.remove()},7000)
 }
-setTimeout(function(){observer.disconnect()},6000)

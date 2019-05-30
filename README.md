@@ -1,6 +1,5 @@
 # douyudanmu
 
-现已经支持[huya](https://github.com/daochouwangu/douyudanmu/blob/master/huyadanmu.js),[b站直播](https://github.com/daochouwangu/douyudanmu/blob/master/bilibilidanmu.js)
 弹幕助手，临时用
 ### 斗鱼版本已发布到猴子脚本的 [GreasyFork仓库](https://greasyfork.org/zh-CN/scripts/383842-%E6%96%97%E9%B1%BC%E5%BC%B9%E5%B9%95%E6%98%BE%E7%A4%BA)
 

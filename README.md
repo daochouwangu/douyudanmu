@@ -2,7 +2,6 @@
 
 现已经支持[huya](https://github.com/daochouwangu/douyudanmu/blob/master/huyadanmu.js),[b站直播](https://github.com/daochouwangu/douyudanmu/blob/master/bilibilidanmu.js)
 斗鱼弹幕助手，临时用
-暂不支持全屏
 暂不支持贵族弹幕
 
 ### 使用方式
@@ -14,7 +13,6 @@
 6. 再按F12关闭控制台
 
 ```
-//使用MutationObserver监听DOM变化
 var targetNode = document.getElementById('js-player-barrage');
 var config = { attributes: false, childList: true, subtree: true };
 var callback = function(mutationsList) {

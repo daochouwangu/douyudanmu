@@ -10,6 +10,7 @@
 3. 在浏览器（推荐chrome）中按F12打开控制台
 4. 在console标签下输入下方代码
 5. 回车
+6. 再按F12关闭控制台
 
 ```
 var targetNode = document.getElementById('js-player-barrage');

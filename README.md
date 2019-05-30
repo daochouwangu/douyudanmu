@@ -1,4 +1,5 @@
 # douyudanmu
+现已经支持[huya](https://github.com/daochouwangu/douyudanmu/blob/master/huyadanmu.js),[b站直播](https://github.com/daochouwangu/douyudanmu/blob/master/bilibilidanmu.js)
 斗鱼弹幕助手，临时用
 打开房间，等右边弹幕区域加载好
 拷贝下方代码，在浏览器（推荐chrome）中按F12打开控制台，在console标签下输入下方代码，回车

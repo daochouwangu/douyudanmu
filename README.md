@@ -24,41 +24,46 @@ var callback = function(mutationsList) {
 };
 var observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
-var wrapper = document.createElement('div');
-document.body.append(wrapper);
-var startTime = 0;
-var MIN_TIME = 1000;
-var prevTop = 0;
-var FONT_SIZE = 50;
-var BEGIN_TOP = 70;
+var wrapper = document.createElement('div')
+document.body.append(wrapper)
+var startTime = 0
+var MIN_TIME = 1000
+var prevTop = 0
+var FONT_SIZE = 50
+var BEGIN_TOP = 70
 function send(danmu) {
-	var dom = danmu.cloneNode(true);
-	var now = new Date();
-	dom.style.position = 'fixed';
-	dom.style.zIndex = '10000';
-	dom.style.transition = 'transform 7s linear';
-	dom.style.transform = 'translateX(0px)';
-	dom.style.fontSize = '20px';
-	dom.style.fontWeight = '800';
-	var top = BEGIN_TOP ;
+	if(!danmu) return;
+	var dom = danmu.cloneNode(true)
+	var now = new Date()
+	dom.style.position = 'fixed'
+	dom.style.zIndex = '10000'
+	dom.style.transition = 'transform 7s linear'
+	dom.style.transform = 'translateX(200px)'
+	dom.style.fontSize = '20px'
+	dom.style.fontWeight = '800'
+	if (!danmu.getAttribute('class').includes('color')){
+		dom.style.color = '#fff'
+		dom.style.textShadow = '#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0'
+	}
+	var top = BEGIN_TOP 
 	if (startTime === 0 ) {
-		startTime = now ;
-		prevTime = now ;
+		startTime = now 
+		prevTime = now 
 	} else {
 		if(now - startTime <= MIN_TIME) {
-			top=prevTop + FONT_SIZE;
-			prevTop = prevTop + FONT_SIZE;
+			top=prevTop + FONT_SIZE
+			prevTop = prevTop + FONT_SIZE
 		} else {
-			top=BEGIN_TOP ;
-			prevTop = BEGIN_TOP ;
-			startTime = now;
+			top=BEGIN_TOP 
+			prevTop = BEGIN_TOP 
+			startTime = now
 		}
 	}
-	dom.style.top = `${top}px`;
-	dom.style.right='0';
-	wrapper.append(dom);
-	var clientWidth = document.body.clientWidth;
-	setTimeout(function(){dom.style.transform = `translateX(-${clientWidth}px)`;},0);
-	setTimeout(function(){dom.remove();},7000);
+	dom.style.top = `${top}px`
+	dom.style.right='0'
+	wrapper.append(dom)
+	var clientWidth = document.body.clientWidth
+	setTimeout(function(){dom.style.transform = `translateX(-${clientWidth}px)`},0)
+	setTimeout(function(){dom.remove()},7000)
 }
 ```

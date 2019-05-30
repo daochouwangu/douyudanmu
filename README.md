@@ -6,7 +6,7 @@
 暂不支持贵族弹幕
 
 ### 使用方式
-1. 打开房间，等右边弹幕区域加载好
+1. 打开房间，切换到h5播放器，等右边弹幕区域加载好
 2. 拷贝下方代码
 3. 在浏览器（推荐chrome）中按F12打开控制台
 4. 在console标签下输入下方代码
@@ -14,6 +14,7 @@
 6. 再按F12关闭控制台
 
 ```
+//使用MutationObserver监听DOM变化
 var targetNode = document.getElementById('js-player-barrage');
 var config = { attributes: false, childList: true, subtree: true };
 var callback = function(mutationsList) {
@@ -25,21 +26,21 @@ var callback = function(mutationsList) {
 };
 var observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
-var wrapper = document.createElement('div')
-document.body.append(wrapper)
+var wrapper = document.querySelector("#__h5player").children[3].children[1]
 var startTime = 0
 var MIN_TIME = 1000
 var prevTop = 0
 var FONT_SIZE = 50
-var BEGIN_TOP = 70
+var BEGIN_TOP = 70 
 function send(danmu) {
 	if(!danmu) return;
 	var dom = danmu.cloneNode(true)
 	var now = new Date()
-	dom.style.position = 'fixed'
+  var clientWidth = wrapper.clientWidth
+	dom.style.position = 'absolute'
 	dom.style.zIndex = '10000'
 	dom.style.transition = 'transform 7s linear'
-	dom.style.transform = 'translateX(200px)'
+	dom.style.transform = `translateX(${clientWidth}px)`
 	dom.style.fontSize = '20px'
 	dom.style.fontWeight = '800'
 	if (!danmu.getAttribute('class').includes('color')){
@@ -61,10 +62,9 @@ function send(danmu) {
 		}
 	}
 	dom.style.top = `${top}px`
-	dom.style.right='0'
 	wrapper.append(dom)
-	var clientWidth = document.body.clientWidth
-	setTimeout(function(){dom.style.transform = `translateX(-${clientWidth}px)`},0)
+	setTimeout(function(){dom.style.transform = 'translateX(-200px)'},0)
 	setTimeout(function(){dom.remove()},7000)
 }
+setTimeout(function(){observer.disconnect()},6000)
 ```

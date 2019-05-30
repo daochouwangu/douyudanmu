@@ -66,5 +66,4 @@ function send(danmu) {
 	setTimeout(function(){dom.style.transform = 'translateX(-200px)'},0)
 	setTimeout(function(){dom.remove()},7000)
 }
-setTimeout(function(){observer.disconnect()},6000)
 ```

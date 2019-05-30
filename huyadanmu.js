@@ -5,7 +5,7 @@ var config = { attributes: false, childList: true, subtree: true };
 var callback = function(mutationsList) {
     for(var mutation of mutationsList) {
 	if(mutation.addedNodes[0]){
-		send(mutation.addedNodes[0].querySelector(".msg"));
+		send(mutation.addedNodes[0]);
 	}
     }
 };
@@ -22,7 +22,8 @@ var FONT_SIZE = 50	//弹幕的宽度
 var BEGIN_TOP = 70 //弹幕离最上方的距离
 function send(danmu) {
 	if(!danmu) return;
-	var dom = danmu.cloneNode(true)
+	if(danmu.querySelector(".msg-onTVLottery")) return;
+	var dom = danmu.querySelector(".msg").cloneNode(true)
 	var now = new Date()
 	dom.style.position = 'fixed'
 	dom.style.zIndex = '10000'
@@ -30,6 +31,8 @@ function send(danmu) {
 	dom.style.transform = 'translateX(200px)'
 	dom.style.fontSize = '20px'
 	dom.style.fontWeight = '800'
+	dom.style.color = '#fff'
+	dom.style.textShadow = '#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0'
 	var top = BEGIN_TOP 
 	if (startTime === 0 ) {
 		startTime = now 

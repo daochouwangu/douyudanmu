@@ -22,7 +22,9 @@ var BEGIN_TOP = 70 //弹幕离最上方的距离
 function send(danmu) {
 	if(!danmu) return;
 	if(danmu.querySelector(".msg-onTVLottery")) return;
-	var dom = danmu.querySelector(".msg").cloneNode(true)
+	var dom = danmu.querySelector(".msg")
+	if(!dom) return;
+	dom = dom.cloneNode(true)
 	var now = new Date()
 	var clientWidth = wrapper.clientWidth
 	dom.style.position = 'absolute'

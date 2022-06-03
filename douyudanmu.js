@@ -18,8 +18,9 @@
     var SPEED = 200 //弹幕速度
     var MIN_TIME = 2000 //同一行的弹幕最小间隔时间，如果弹幕有重叠就增加这个值
     var BEGIN_TOP = 10 //弹幕离最上方的距离
+    var wrapper = document.querySelector("#douyu_room_normal_player_danmuDom")
     var start = setInterval(function(){
-        if (document.querySelector("#__h5player").children[3].children[1]){
+        if (wrapper){
             initApplication()
             clearInterval(start)
         }
@@ -39,7 +40,7 @@
         var observer = new MutationObserver(callback);
         observer.observe(targetNode, config);
         //建立一个放弹幕的容器
-        var wrapper = document.querySelector("#__h5player").children[3].children[1]
+        
         //使用第一行弹幕的时间来控制弹幕的并发
         function send(danmu) {
             if(!danmu) return;

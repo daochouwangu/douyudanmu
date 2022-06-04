@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         斗鱼弹幕显示
 // @namespace    https://github.com/daochouwangu/douyudanmu/blob/master/douyudanmu.js
-// @version      1.21
+// @version      1.24
 // @description  显示弹幕
 // @supportURL   https://github.com/daochouwangu/douyudanmu/issues
 // @author       lyb
@@ -25,7 +25,6 @@
         var targetNode = document.getElementById('js-barrage-list');
         var config = { attributes: false, childList: true, subtree: true };
         var callback = function(mutationsList) {
-            console.log(mutationsList)
             for(var mutation of mutationsList) {
 
                 if(mutation.addedNodes[0]){
@@ -71,7 +70,10 @@
             dom.style.top = `${top}px`
             wrapper.append(dom)
             //弹幕滚动效果
-            setTimeout(function(){dom.style.transform = 'translateX(-400px)'},0)
+            setTimeout(function(){
+                var width = dom.clientWidth
+                dom.style.transform = `translateX(-${width}px)`
+            },0)
             //垃圾回收
             setTimeout(function(){dom.remove()},time * 1500)
         }

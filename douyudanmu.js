@@ -48,7 +48,7 @@
             dom.style.position = 'absolute'
             dom.style.zIndex = '10000'
             dom.style.transition = `transform ${time}s linear`
-            dom.style.transform = `translateX(${clientWidth})`
+            dom.style.transform = `translateX(${clientWidth}px)`
             dom.style.fontSize = `${FONT_SIZE}px`
             dom.style.fontWeight = '800'
             if (!danmu.getAttribute('class').includes('color')){
